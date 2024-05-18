@@ -1,0 +1,7 @@
+{
+  "name": "segundoParcial",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
