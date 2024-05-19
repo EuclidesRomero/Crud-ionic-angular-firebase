@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista de canciones</ion-title>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/artistas">
+        Ir a artistas
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/details">
+        Details
+      </ion-button>
+      <ion-button routerLink="/new-song">
+        Nueva canción
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngFor="let song of songList">
+    <ion-card-header>
+      <ion-card-title>{{ song.title }}</ion-card-title>
+      <ion-card-subtitle>{{ song.artist }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ song.duration }}</ion-card-subtitle>
+    </ion-card-header>
+    <div class="ion-margin button-container">
+      <ion-button (click)="onClickUpdate(song.id)" class="ion-margin-end">Actualizar</ion-button>
+      <ion-button (click)="onclickDelete(song)" color="danger">Eliminar</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

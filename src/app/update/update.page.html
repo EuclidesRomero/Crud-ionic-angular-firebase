@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Update Song
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-item>
+    <ion-label>Name: </ion-label>
+    <ion-input type="text" [(ngModel)]=" Onesong.title"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Artist: </ion-label>
+    <ion-input type="text" [(ngModel)]="Onesong.artist"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Duration: </ion-label>
+    <ion-input type="text" [(ngModel)]="Onesong.duration"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Duration: </ion-label>
+    <ion-input type="text" [(ngModel)]="Onesong.album"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="updateSong()">Update</ion-button>
+</ion-content>

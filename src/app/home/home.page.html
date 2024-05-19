@@ -1,20 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-button routerLink="/recording-studio">
+      Ver recording studio
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/details">
+        Details
+      </ion-button>
+      <ion-button routerLink="/new-song">
+        Nueva canción
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<h1>Guardar en la coleccion</h1>
+<div class="formulario">
+  <form [formGroup]="frm" (ngSubmit)="onSubmit()">
+    <label for="" class="labeltext">Owner </label>
+    <ion-input formControlName="Owner" type="text"></ion-input>
+    <label for="" class="labeltext" >Name of recording </label>
+    <ion-input   formControlName="nameOfRecording" type="text"></ion-input>
+    <label for="" class="labeltext">Number of cabins </label>
+    <ion-input formControlName="numberOfCabins" type="text" class="input"></ion-input>
+    <label for="" class="labeltext">Type of melody </label>
+    <ion-input formControlName="typeOfMelody" type="text"></ion-input>
+    <ion-button type="submit" class="submit">Guardar</ion-button>
+  </form>
+</div>

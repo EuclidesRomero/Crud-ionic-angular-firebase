@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="text-center">Informacion adicional de los artistas</ion-title>
+  </ion-toolbar>
+  <ion-button routerLink="/">
+    Home
+  </ion-button>
+</ion-header>
+
+<ion-content >
+  <ion-card *ngFor="let artista of (results | async) ">
+    <ion-card-header>
+      <ion-card-title>{{ artista.name }}</ion-card-title>
+      <ion-card-subtitle>{{ artista.username }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Email:</strong> {{ artista.email }}</p>
+      <p><strong>Address:</strong></p>
+      <ul>
+        <li>{{ artista.address.street }}, {{ artista.address.suite }}</li>
+        <li>{{ artista.address.city }}, {{ artista.address.zipcode }}</li>
+      </ul>
+      <p><strong>Geo Location:</strong></p>
+      <ul>
+        <li>Latitude: {{ artista.address.geo.lat }}</li>
+        <li>Longitude: {{ artista.address.geo.lng }}</li>
+      </ul>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

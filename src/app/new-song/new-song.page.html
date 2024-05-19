@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agrega una nueva cancion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input formControlName="title" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Artista</ion-label>
+        <ion-input formControlName="artist" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Álbum</ion-label>
+        <ion-input formControlName="album" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Duración</ion-label>
+        <ion-input formControlName="duration" type="text"></ion-input>
+      </ion-item>
+  
+      <ion-button expand="block" type="submit">Agregar Canción</ion-button>
+    </form>
+</ion-content>

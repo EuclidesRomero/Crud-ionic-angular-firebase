@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'artistas',
+    loadChildren: () => import('./artistas/artistas.module').then( m => m.ArtistasPageModule)
+  },
+  {
+    path: 'details',
+    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+  },
+  {
+    path: 'update/:id',
+    loadChildren: () => import('./update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'new-song',
+    loadChildren: () => import('./new-song/new-song.module').then( m => m.NewSongPageModule)
+  },
+  {
+    path: 'recording-studio',
+    loadChildren: () => import('./recording-studio/recording-studio.module').then( m => m.RecordingStudioPageModule)
+  },
 ];
 
 @NgModule({
